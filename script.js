@@ -7,9 +7,9 @@
 
 var generateBtn = document.querySelector("#generate");
 var numChoice = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var upperCase = ["A","B","C", "D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-var spCase = ["~","!","@","#","$","%","^","&","*","(",")","-","_","+","=","{","}","|","[","]","<",">","?",",",".","/"];
+var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",];
+var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
+var spCase = ["~","!","@","#","$","%","^","&","*","(",")","-","_","+","=","{","}","|","[","]","<",">","?",",",".","/",];
 
 
 
@@ -18,6 +18,7 @@ var spCase = ["~","!","@","#","$","%","^","&","*","(",")","-","_","+","=","{","}
 function generatePassword() {
 //Given the choice of 8-128 characters, this data will be the length of their password.
 //We are using promt to get and store their answer.
+//Useing parse int to get a numbered output.
 var length = parseInt(prompt("How many characters do you want the password to be? (8 and up to 128 characters)"));
 
 //Given the choice of a Yes or No to confirm, the User can decide if they would like to include any uppercase letters.
@@ -30,10 +31,10 @@ var includeLower = confirm("Do you want your password to have lowercase characte
 var includeNumber = confirm("do you want your password to include numbers?");
 
 //Given the choice of a Yes or No to confirm, the User can decide if they would like to include any special characters.
-var includeSpChar = confirm("do you want your password to include special characters?");
+var includeSpCase = confirm("do you want your password to include special characters?");
 
 //We then gather all of the data from the result above and put it in this pot of results.
-var pot = [];
+var potPassword = [];
 
 //This variable is to store and generate the User's final password.
 var finalPassword = ""
@@ -46,41 +47,43 @@ var finalPassword = ""
 //With an If statement, we can gather and combine the arrays to/from our "pot"-data, and also our original arrays of the variables.
 //If the user chose Yes to include uppercase letters, it is then added to our pot.
 if(includeUpper === true){
-  pot = pot.concat(upperCase);
+  potPassword = potPassword.concat(upperCase);
 }
 
 //If the user chose Yes to include lowercase letters, it is then added to our pot.
 //Because we are using the concat method, we can also write it as =+
 if(includeLower === true){
-  pot = pot.concat(lowerCase);
+  potPassword = potPassword.concat(lowerCase);
 }
 
 //If the user chose Yes to include special characters, it is then added to our pot.
-if(includeSpChar === true){
-  pot = pot.concat(spCase);
+if(includeSpCase === true){
+  potPassword = potPassword.concat(spCase);
 }
 
 //If the user chose Yes to include lowercase letters, it is then added to our pot.
 if(includeNumber === true){
-  pot = pot.concat(numChoice);
+  potPassword = potPassword.concat(numChoice);
 }
 
 //This step is now to mix all of the data from the User into the pot.
-console.log(pot)
+console.log(potPassword)
 
 
 
-//work in progress
+//Looping is used to generate the variables from the User's choice.
+for (let i = 0 ; i < length ; i++){
+//To generate the random output, Random is used here based on the password-length specified by the User.
+//The loop above will generate a new password-string everytime it's being run.
+  var index = Math.floor(Math.random()*potPassword.length);
+  var temp = potPassword[index];
+  finalPassword += temp;
+}
 
-// for (let i = 0 ; i < length ; i++ ){
-//   var index = Math.floor(Math.random()*pot.length-1);
-//   var temp = pot[index];
-//   finalPassword += temp;
-// }
+//Generating final password
+return finalPassword;
 
-// return finalPassword;
-
-// }
+}
 
 
 

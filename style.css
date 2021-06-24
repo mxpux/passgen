@@ -12,6 +12,10 @@ body,
   padding: 0;
 }
 
+h2 {
+  text-align: center;
+}
+
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
