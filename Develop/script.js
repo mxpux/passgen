@@ -6,7 +6,7 @@
 //The password is required to be between 8 and 128 characters.
 
 var generateBtn = document.querySelector("#generate");
-var numChoice = [0,1,2,3,4,5,6,7,8,9];
+var numChoice = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var upperCase = ["A","B","C", "D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var spCase = ["~","!","@","#","$","%","^","&","*","(",")","-","_","+","=","{","}","|","[","]","<",">","?",",",".","/"];
@@ -36,4 +36,64 @@ var includeSpChar = confirm("do you want your password to include special charac
 var pot = [];
 
 //This variable is to store and generate the User's final password.
-var finalPassword = ""}
+var finalPassword = ""
+
+
+
+//+++This set of data below are now gathered and retrived from the User's choices above.+++//
+
+
+//With an If statement, we can gather and combine the arrays to/from our "pot"-data, and also our original arrays of the variables.
+//If the user chose Yes to include uppercase letters, it is then added to our pot.
+if(includeUpper === true){
+  pot = pot.concat(upperCase);
+}
+
+//If the user chose Yes to include lowercase letters, it is then added to our pot.
+//Because we are using the concat method, we can also write it as =+
+if(includeLower === true){
+  pot = pot.concat(lowerCase);
+}
+
+//If the user chose Yes to include special characters, it is then added to our pot.
+if(includeSpChar === true){
+  pot = pot.concat(spCase);
+}
+
+//If the user chose Yes to include lowercase letters, it is then added to our pot.
+if(includeNumber === true){
+  pot = pot.concat(numChoice);
+}
+
+//This step is now to mix all of the data from the User into the pot.
+console.log(pot)
+
+
+
+//work in progress
+
+// for (let i = 0 ; i < length ; i++ ){
+//   var index = Math.floor(Math.random()*pot.length-1);
+//   var temp = pot[index];
+//   finalPassword += temp;
+// }
+
+// return finalPassword;
+
+// }
+
+
+
+
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
