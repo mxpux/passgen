@@ -1,7 +1,7 @@
 
 
 
-//This password generator is meant to collect the variable data from the User's choice.
+//This password generator is meant to collect the variable password output from the User's specified choice.
 //The user can decide if they want to include any of the following variables below.
 //The password is required to be between 8 and 128 characters.
 
@@ -14,11 +14,10 @@ var spCase = ["~","!","@","#","$","%","^","&","*","(",")","-","_","+","=","{","}
 
 
 //This set of questions will be utilized to generate the User's password based on their answers.
-
 function generatePassword() {
 //Given the choice of 8-128 characters, this data will be the length of their password.
 //We are using promt to get and store their answer.
-//Useing parse int to get a numbered output.
+//Using parse-int to get a numbered output.
 var length = parseInt(prompt("How many characters do you want the password to be? (8 and up to 128 characters)"));
 
 //Given the choice of a Yes or No to confirm, the User can decide if they would like to include any uppercase letters.
@@ -33,7 +32,7 @@ var includeNumber = confirm("do you want your password to include numbers?");
 //Given the choice of a Yes or No to confirm, the User can decide if they would like to include any special characters.
 var includeSpCase = confirm("do you want your password to include special characters?");
 
-//We then gather all of the data from the result above and put it in this pot of results.
+//We then gather all of the data from the result above and put it in this password-pot of results.
 var potPassword = [];
 
 //This variable is to store and generate the User's final password.
@@ -41,33 +40,33 @@ var finalPassword = ""
 
 
 
-//+++This set of data below are now gathered and retrived from the User's choices above.+++//
+//+++The set of data below are now gathered and retrived from the User's choices above.+++//
 
 
-//With an If statement, we can gather and combine the arrays to/from our "pot"-data, and also our original arrays of the variables.
-//If the user chose Yes to include uppercase letters, it is then added to our pot.
+//With an If statement, we can gather and combine the arrays to/from our "password-pot", and also our original arrays of the variables.
+//If the user chose Yes to include uppercase letters, it is then added to our password-pot.
 if(includeUpper === true){
   potPassword = potPassword.concat(upperCase);
 }
 
-//If the user chose Yes to include lowercase letters, it is then added to our pot.
+//If the user chose Yes to include lowercase letters, it is then added to our password-pot.
 //Because we are using the concat method, we can also write it as =+
 if(includeLower === true){
   potPassword = potPassword.concat(lowerCase);
 }
 
-//If the user chose Yes to include special characters, it is then added to our pot.
+//If the user chose Yes to include special characters, it is then added to our password-pot.
 if(includeSpCase === true){
   potPassword = potPassword.concat(spCase);
 }
 
-//If the user chose Yes to include lowercase letters, it is then added to our pot.
+//If the user chose Yes to include lowercase letters, it is then added to our password-pot.
 if(includeNumber === true){
   potPassword = potPassword.concat(numChoice);
 }
 
-//This step is now to mix all of the data from the User into the pot.
-console.log(potPassword)
+//This step is now to mix all of the data from the User into the password-pot.
+ console.log(potPassword)
 
 
 
@@ -79,10 +78,8 @@ for (let i = 0 ; i < length ; i++){
   var temp = potPassword[index];
   finalPassword += temp;
 }
-
 //Generating final password
 return finalPassword;
-
 }
 
 
