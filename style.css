@@ -143,3 +143,17 @@ button[disabled] {
     font-size: 0.8rem;
   }
 }
+
+ /* Small smartphones */
+ @media screen and (max-width: 576px) {
+
+  .logo {
+  background-color: #ffffff;
+  flex-direction: column;
+  flex-flow: wrap;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  width: 280px;
+  }}

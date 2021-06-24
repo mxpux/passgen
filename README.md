@@ -14,11 +14,12 @@
 
 ***
 > **PASSGEN DEMO** 
+***
 ![Screenshot of Horiseon website)](https://media4.giphy.com/media/uAknEhMwQcWUEF3sbD/giphy.gif?cid=790b7611b0b3e2cc79a1b438f4846297130fbcf4719b5bc6&rid=giphy.gif&ct=g)
 
 ***
 > **PASSGEN UX/UI** 
-***
+
 
 ![Screenshot of Horiseon website)](https://i.imgur.com/ZzLAyk8.jpg)
 
