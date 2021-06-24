@@ -13,6 +13,10 @@
 
 ***
 
+![Screenshot of Horiseon website)](https://i.imgur.com/ZzLAyk8.jpg)
+
+***
+
 > #### Coding Languages used on this project:
 > - [x] JavaSrcipt
 > - [x] HTML

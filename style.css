@@ -14,6 +14,10 @@ body,
 
 h2 {
   text-align: center;
+  color: #3366ff;
+  font-size: 15px;
+  letter-spacing: 3px;
+  
 }
 
 body {
@@ -78,7 +82,7 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: #3366ff;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
