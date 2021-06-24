@@ -11,9 +11,7 @@
 > - Special characters
 > - Numbers
 
-
-
-
+***
 
 > #### Coding Languages used on this project:
 > - [x] JavaSrcipt
@@ -21,7 +19,8 @@
 > - [x] CSS
 
 ***
-
-
-
+Reference documentation used on this project:
+> - Array Concat Style: [**Array Concat**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
+> - Array Index Position: [**Array Index**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+> - Random Generator: [**Math Random**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 
