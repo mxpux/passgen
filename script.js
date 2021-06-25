@@ -19,8 +19,11 @@ function generatePassword() {
 //We are using promt to get and store their answer.
 //Using parse-int to get a numbered output.
 var length = parseInt(prompt("How many characters do you want the password to be? (8 and up to 128 characters)"));
+
+//The user will also be given an alert if they choose any number less than 8 or more than 128.
+//And if so, this promt will start at the beginning of the process then would ask the User to reenter their password length.
 if (length < 8 || length > 128){
-  return alert ("Invalid password length")
+return alert ("Invalid password length")
 }
 //Given the choice of a Yes or No to confirm, the User can decide if they would like to include any uppercase letters.
 var includeUpper = confirm("Do you want your password to have UPPERCASE characters?");
@@ -34,6 +37,8 @@ var includeNumber = confirm("do you want your password to include numbers?");
 //Given the choice of a Yes or No to confirm, the User can decide if they would like to include any special characters.
 var includeSpCase = confirm("do you want your password to include special characters?");
 
+//If the user did not choose any characters, it will alert an invalid response.
+//This would then ask the User to restart and make new character selection(s).
 if (
   includeUpper === false && 
   includeLower === false &&
