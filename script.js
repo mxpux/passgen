@@ -19,7 +19,9 @@ function generatePassword() {
 //We are using promt to get and store their answer.
 //Using parse-int to get a numbered output.
 var length = parseInt(prompt("How many characters do you want the password to be? (8 and up to 128 characters)"));
-
+if (length < 8 || length > 128){
+  return alert ("Invalid password length")
+}
 //Given the choice of a Yes or No to confirm, the User can decide if they would like to include any uppercase letters.
 var includeUpper = confirm("Do you want your password to have UPPERCASE characters?");
 
@@ -31,6 +33,15 @@ var includeNumber = confirm("do you want your password to include numbers?");
 
 //Given the choice of a Yes or No to confirm, the User can decide if they would like to include any special characters.
 var includeSpCase = confirm("do you want your password to include special characters?");
+
+if (
+  includeUpper === false && 
+  includeLower === false &&
+  includeSpCase === false &&
+  includeNumber === false
+){
+  return alert ("Must select one character type")
+}
 
 //We then gather all of the data from the result above and put it in this password-pot of results.
 var potPassword = [];
@@ -74,7 +85,7 @@ if(includeNumber === true){
 for (let i = 0 ; i < length ; i++){
 //To generate the random output, Random is used here based on the password-length specified by the User.
 //The loop above will generate a new password-string everytime it's being run.
-  var index = Math.floor(Math.random()*potPassword.length);
+  var index = Math.floor(Math.random()*(potPassword.length));
   var temp = potPassword[index];
   finalPassword += temp;
 }
